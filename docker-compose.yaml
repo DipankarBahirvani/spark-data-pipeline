@@ -1,0 +1,8 @@
+services:
+  processing:
+    build:
+      dockerfile: Dockerfile.processing
+    volumes:
+      - ./data/:/opt/code/data/
+        
+

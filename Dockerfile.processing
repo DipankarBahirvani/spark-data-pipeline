@@ -1,0 +1,14 @@
+FROM python:3.10-slim
+RUN python3.10 -m venv /opt/venv
+RUN apt-get update
+RUN apt-get install default-jdk -y
+ENV PATH="/opt/venv/bin:$PATH"
+WORKDIR /opt/code
+COPY requirements.txt .
+RUN /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
+COPY batch_processing  /opt/code/processing
+ENV PYTHONPATH="/opt/code"
+CMD ["python3","/opt/code/processing/processing.py","run-local-pipeline","--input-path","data/raw/input_data.json","--output-path","data/enriched"]
+
+
+
