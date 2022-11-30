@@ -65,7 +65,7 @@ To run the project locally without Docker :
   ```
 * To run the data cleaning and analysis components locally. Run the following command 
      ```bash
-    python3 batch-processing/processing.py run-local-pipeline --input-path data/raw/input_data.json --output-path data/enriched
+    python3 batch_processing/processing.py run-local-pipeline --input-path data/raw/input_data.json --output-path data/enriched
      ```
 
 
